@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="container">
+  <table class="table table-light">
+    <tr>
+      <th>TITLE</th>
+      <th>Author</th>
+      <th>Artist</th>
+      <th>Song</th>
+    </tr>
+    {% for song in songs %}
+    <tr>
+      <td>{{ song.title }}</td>
+      <td>{{ song.author }}</td>
+      <td>{{ song.artist }}</td>
+      <td>
+        <audio class="fc-media" style="width: 100%;">
+           <source src="{{ song.file.url }}" type="audio/ogg" />
+           <source src="{{ song.file.url }}" type="audio/mpeg" />
+           <source src="{{ song.file.url }}" type="audio/wav" />
+          Your browser doesn't support the sudio element
+        </audio>
+        <p><a href="{{ song.file.url }}" class="text-danger">Download</a></p>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

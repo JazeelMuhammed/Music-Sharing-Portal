@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-7 mx-auto" style="margin-top: 60px; ">
+    <h1 class="text-center text-dark ml-4" style="font-family: cursive">Get Your Favourite Songs Here</h1>
+    <div style="margin-left: 33%;" class="mt-4">
+      <a href="{% url 'upload/' %}" class="btn btn-success btn-lg mr-2">Share music</a>
+      <a href="{% url 'songs/' %}" class="btn btn-lg btn-warning">See Playlist</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
